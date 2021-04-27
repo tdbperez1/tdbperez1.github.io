@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- header Start -->
+
+	<div class="header">
+	  <a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>
+	  <div class="header-right">
+	    <a href="index.html">Home</a>
+	    <a href="program.html">Science Program</a>
+	    <a href="teaching.html">Teaching Assistant</a>
+	    <a class="active" href="calculation.html">GPA Calculation</a>
+	  </div>
+    </div>
+
+    <!-- header End -->
+
+    <!-- Body Start -->
+    <h1 class="cl-txt">GPA Calculator</h1>
+    <div class="row cal-row">
+		<form class="form-inline" action="/action_page.php">
+
+			<div style="margin-right: 4%;">
+				<label for="course">Courses</label>
+				  <input id="course" type="text">
+
+				  <label for="credits">Credits</label>
+				  <input id="credit" type="number">
+
+				  <label for="grade">Grade</label>
+				  <select id="grade">
+				  	<option value="A">A</option>
+				  	<option value="B">B</option>
+				  	<option value="C">C</option>
+				  	<option value="D">D</option>
+				  	<option value="F">F</option>
+				  </select>
+			</div>
+			<div>
+			    <label for="course">Courses</label>
+				  <input id="course2" type="text">
+
+				  <label for="credits">Credits</label>
+				  <input id="credit2" type="number">
+
+				  <label for="grade">Grade</label>
+				  <select id="grade2">
+				  	<option value="A">A</option>
+				  	<option value="B">B</option>
+				  	<option value="C">C</option>
+				  	<option value="D">D</option>
+				  	<option value="F">F</option>
+				  </select>
+			</div>
+			
+		</form>
+    </div>
+	<input type="button" id="btn" value="Submit" class="cal-btn">
+	<h3 id="result" style="text-align: center;"></h3>
+    <!-- body End -->
+
+    <!-- footer Start -->
+
+    <footer class="footer" style="margin-top: 10% !important;">
+
+		<div class="l-footer">
+		<a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>		<div class="gcse-search"></div>
+		</div>
+
+		<ul class="r-footer">
+		<li class="features">
+		  <h2>
+		INFORMATION</h2>
+		<ul class="box h-box">
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Pricing</a></li>
+		<li><a href="#">Sales</a></li>
+		</ul>
+		</li>
+		<li>
+		  <h2>
+		LEGAL</h2>
+		<ul class="box">
+		<li><a href="#">Privacy Policy</a></li>
+		<li><a href="#">Terms of Use</a></li>
+		<li><a href="#">Contact</a></li>
+		</ul>
+		</li>
+		</ul>
+		<div class="b-footer">
+		<p>
+		All rights reserved by ©Auburn University of Montgomery 2020 </p>
+		</div>
+    </footer>
+
+
+    <!-- footer End -->
+    	<script async src=
+           "https://cse.google.com/cse.js?cx=007019498718139788174:amtiepdpgeg">
+        </script>
+
+        <script type="text/javascript">
+
+        	document.getElementById('btn').onclick = function () {
+
+        		var course = document.getElementById('course').value;
+        		var credit = document.getElementById('credit').value;
+        		var grade = document.getElementById('grade').value;
+
+        		var course2 = document.getElementById('course2').value;
+        		var credit2 = document.getElementById('credit2').value;
+        		var grade2 = document.getElementById('grade2').value;
+
+        		if (course == '' || credit == '' || grade == '' || course2 == '' || credit2 == '' || grade2 == '') {
+        			alert("All fields are required");
+        		} else {
+        			//for 1 subject
+        			var grade_one_value = 0.0;
+        			var int_credit = parseInt(credit);
+        			if(grade == 'A'){
+        				grade_one_value = 4.0;
+        			} else if(grade == 'B'){
+        				grade_one_value = 3.0;
+        			} else if(grade == 'C') {
+        				grade_one_value = 2.0;
+        			} else if(grade == 'D') {
+        				grade_one_value = 1.0;
+        			} else if(grade == 'F'){
+        				grade_one_value = 0.0;
+        			}
+        			var course_one_result = int_credit * grade_one_value;
+
+        			//for 2 subject 
+        			var grade_two_value = 0.0;
+        			var int_credit2 = parseInt(credit2);
+        			if(grade2 == 'A'){
+        				grade_two_value = 4.0;
+        			} else if(grade2 == 'B'){
+        				grade_two_value = 3.0;
+        			} else if(grade2 == 'C') {
+        				grade_two_value = 2.0;
+        			} else if(grade2 == 'D') {
+        				grade_two_value = 1.0;
+        			} else if(grade2 == 'F'){
+        				grade_two_value = 0.0;
+        			}
+        			var course_two_result = int_credit2 * grade_two_value;
+        			var total_credit_hours = parseInt(credit) + parseInt(credit2);
+        			var gpa = (course_one_result + course_two_result) / total_credit_hours;
+        			document.getElementById('result').innerText = `Your GPA is ${gpa}`;
+        		}
+
+        		
+
+        	}
+
+        </script>
+
+</body>
+</html>

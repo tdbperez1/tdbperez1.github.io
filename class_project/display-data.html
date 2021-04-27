@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+
+		
+	</style>
+</head>
+<body>
+<!-- header Start -->
+
+	<div class="header">
+	  <a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>
+	  <div class="header-right">
+	    <a href="index.html">Home</a>
+	    <a href="Program.html">Science Program</a>
+	    <a class="active" href="teaching.html">Teaching Assistant</a>
+	    <a href="calculation.html">GPA Calculation</a>
+	  </div>
+    </div>
+
+    <!-- header End -->
+<h1 class="data-txt" id="message">Data</h1>
+<dl class="input-datas" id="data">
+	<dt>Name</dt>
+	<dd id="name"></dd>
+
+	<dt>ID</dt>
+	<dd id="id"></dd>
+
+<dt>GPA</dt>
+	<dd id="gpa"></dd>
+
+	<dt>Gender</dt>
+	<dd id="gender"></dd>
+
+	<dt>Date</dt>
+	<dd id="date"></dd>
+
+	<dt>Comment</dt>
+	<dd id="comment"></dd>
+
+</dl>
+ <!-- footer Start -->
+
+    <footer class="footer" style="margin-top: 10% !important;">
+
+		<div class="l-footer">
+		<a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>
+		<div class="gcse-search"></div>
+		</div>
+
+		<ul class="r-footer">
+		<li class="features">
+		  <h2>
+		INFORMATION</h2>
+		<ul class="box h-box">
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Pricing</a></li>
+		<li><a href="#">Sales</a></li>
+		</ul>
+		</li>
+		<li>
+		  <h2>
+		LEGAL</h2>
+		<ul class="box">
+		<li><a href="#">Privacy Policy</a></li>
+		<li><a href="#">Terms of Use</a></li>
+		<li><a href="#">Contact</a></li>
+		</ul>
+		</li>
+		</ul>
+		<div class="b-footer">
+		<p>
+		All rights reserved by ©Auburn University of Montgomery 2020 </p>
+		</div>
+    </footer>
+
+
+    <!-- footer End -->
+<script async src=
+   "https://cse.google.com/cse.js?cx=007019498718139788174:amtiepdpgeg">
+</script>
+
+
+<script type="text/javascript">
+	function getParameterByName(name, url) {
+	    if (!url) url = window.location.href;
+	    name = name.replace(/[\[\]]/g, '\\$&');
+	    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+	        results = regex.exec(url);
+	    if (!results) return '';
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+
+	var name = getParameterByName('name'); 
+	var id = getParameterByName('id'); 
+	var gender = getParameterByName('gender'); 
+	var date = getParameterByName('date'); 
+	var comment = getParameterByName('comment');
+	var gpa = getParameterByName('gpa');
+
+	if(name == '' || id == ''  || gender == ''  || date == ''  || comment == ''  ){
+		//hide data and display message
+		document.getElementById('data').style.display = 'none';
+		document.getElementById('message').innerText = 'Form is not submitted';
+	} else {
+		document.getElementById('data').style.display = 'block';
+		document.getElementById('name').innerHTML = name;
+		document.getElementById('id').innerHTML = id;
+		document.getElementById('gender').innerHTML = gender;
+		document.getElementById('date').innerHTML = date;
+		document.getElementById('comment').innerHTML = comment;
+		document.getElementById('gpa').innerHTML = gpa;
+	}
+
+	
+
+
+
+</script>
+</body>
+</html>

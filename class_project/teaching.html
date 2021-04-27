@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<!-- header Start -->
+
+	<div class="header">
+	  <a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>
+	  <div class="header-right">
+	    <a href="index.html">Home</a>
+	    <a href="Program.html">Science Program</a>
+	    <a class="active" href="teaching.html">Teaching Assistant</a>
+	    <a href="calculation.html">GPA Calculation</a>
+	  </div>
+    </div>
+
+    <!-- header End -->
+
+    <!-- Body Start -->
+
+    <h1 class="f-txt">Application Form</h1>
+    <div class="container cont-1">
+	  <form method="get">
+
+	    <label>Full Name</label>
+	    <input type="text" id="name" placeholder="Full Name">
+
+	    <label>ID</label>
+	    <input type="number" id="id" placeholder="ID Here">
+	    <label>GPA</label>
+	    <input type="number" id="gpa" placeholder="GPA Here">
+
+	    <label>Gender</label>
+	    <select id="gender">
+	      <option>Male</option>
+	      <option>Female</option>
+	    </select>
+
+	    <label>Submission Date</label>
+	    <input id="date" type="date" placeholder="Your Submission Date Here">
+
+	    <label for="subject">Comments</label>
+	    <textarea id="comment" placeholder="Write Your Comment..." style="height:200px"></textarea>
+
+	    <input id="btn" type="button" value="Submit">
+	  </form>
+	</div>
+
+
+    <!-- body End -->
+
+    <!-- footer Start -->
+
+    <footer class="footer">
+
+		<div class="l-footer">
+		
+		<a href="#default" class="logo">
+	  	<img src="images/logo.png">
+	  </a>
+		<div class="gcse-search"></div>
+		</div>
+
+		<ul class="r-footer">
+		<li class="features">
+		  <h2>
+		INFORMATION</h2>
+		<ul class="box h-box">
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Pricing</a></li>
+		<li><a href="#">Sales</a></li>
+		</ul>
+		</li>
+		<li>
+		  <h2>
+		LEGAL</h2>
+		<ul class="box">
+		<li><a href="#">Privacy Policy</a></li>
+		<li><a href="#">Terms of Use</a></li>
+		<li><a href="#">Contact</a></li>
+		</ul>
+		</li>
+		</ul>
+		<div class="b-footer">
+		<p>
+		All rights reserved by ©Auburn University of Montgomery 2020 </p>
+		</div>
+    </footer>
+
+
+    <!-- footer End -->
+    	<script async src=
+           "https://cse.google.com/cse.js?cx=007019498718139788174:amtiepdpgeg">
+        </script>
+         <script type="text/javascript">       
+
+        	document.getElementById('btn').onclick = function () {
+        		var field_1 = document.getElementById('name').value;
+	            var field_2 = document.getElementById('id').value;
+	            var field_3 = document.getElementById('gender').value;
+	            var field_4 = document.getElementById('date').value;
+	            var field_5 = document.getElementById('comment').value;
+	            var field_6 = document.getElementById('gpa').value;
+
+        		if (field_1 == "" || field_2 == "" || field_3 == "" || field_4 == '' ||  field_5 == "" || field_6 == '') {
+
+        			alert("All Fields Are Required");
+
+        		} else {
+        			var href = `name=${field_1}&id=${field_2}&gender=${field_3}&date=${field_4}&comment=${field_5}&gpa=${field_6}`;
+        			window.location.href = 'display-data.html?'+href;
+        		} 
+
+        		
+        }
+
+        	
+        
+        </script>
+        <!-- <script src="js/script.js"></script> -->
+
+       
+
+</body>
+</html>
